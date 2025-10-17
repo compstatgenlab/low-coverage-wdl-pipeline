@@ -3,13 +3,13 @@
 Short WDL workflows to impute low-coverage sequencing data with GLIMPSE2.
 
 ## Contents
-- `bcf_imputation.wdl` — Runs imputation for a single chromosome by scattering over chunk definitions; tasks: ImputeChunk (GLIMPSE2_phase) and Ligate (GLIMPSE2_ligate); outputs a per-chromosome BCF (.bcf + .bcf.csi) and logs/timings.
+- `bcf_imputation.wdl` — Runs imputation for a single chromosome by scattering over chunk definitions; tasks: ImputeChunk (GLIMPSE2_phase) and Ligate (GLIMPSE2_ligate); outputs a per-chromosome BCF (`.bcf` + `.bcf.csi`) and logs/timings.
 - `launch_imputation.wdl` — Master workflow that launches the single-chromosome workflow across a set of chromosomes and aggregates the per-chromosome outputs.
 - `*.json` — Example inputs files for single-chromosome and whole-genome runs.
 
 ## Environment
 - Validated on whole-genome runs in Google Cloud using the Cromwell workflow engine.
-- Reference panel and other inputs can be provided as gs:// paths.
+- Reference panel and other inputs can be provided as `gs://` paths.
 - Tasks automatically fetch a Google Cloud OAuth token from the instance metadata server (GCS_OAUTH_TOKEN) so tools can stream from GCS without pre-downloading files.
 
 ## Docker requirements
