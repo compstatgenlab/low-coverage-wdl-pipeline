@@ -1,0 +1,17 @@
+{
+  "WG_imputation.chromosomes": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"],
+  "WG_imputation.bam_list": "/path/to/bam_list.txt",
+  "WG_imputation.chunkfile_pre": "gs://chunks_chr",
+  "WG_imputation.chunkfile_suf": ".txt",
+  "WG_imputation.refpanel_pre": "gs://ref_chr",
+  "WG_imputation.refpanel_suf": ".bcf",
+  "WG_imputation.map_pre": "gs://map_chr",
+  "WG_imputation.map_suf": ".txt",
+  "WG_imputation.output_prefix": "Str",
+  "WG_imputation.imputation_threads": "1",
+  "WG_imputation.imputation_ram": "4",
+  "WG_imputation.imputation_storage": "50",
+  "WG_imputation.ligation_threads": "1",
+  "WG_imputation.ligation_ram": "4",
+  "WG_imputation.ligation_storage": "50"
+}

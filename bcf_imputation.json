@@ -1,0 +1,14 @@
+{
+  "impute.bam_list": "File",
+  "impute.chunk_file": "File",
+  "impute.ref_panel": "File",
+  "impute.map": "File",
+  "impute.output_prefix": "String",
+  "impute.chr": "String",
+  "impute.imputation_threads": "Int",
+  "impute.imputation_ram": "Int",
+  "impute.imputation_storage": "Int",
+  "impute.ligation_threads": "Int",
+  "impute.ligation_ram": "Int",
+  "impute.ligation_storage": "Int"
+}
