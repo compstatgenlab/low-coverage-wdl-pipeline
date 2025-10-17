@@ -14,7 +14,7 @@ Short WDL workflows to impute low-coverage sequencing data with GLIMPSE2.
 
 ## Docker requirements
 The runtime image must contain:
-- [GLIMPSE2 binaries](https://github.com/odelaneau/GLIMPSE) (GLIMPSE2_phase, GLIMPSE2_ligate)
+- [GLIMPSE2](https://github.com/odelaneau/GLIMPSE) (GLIMPSE2_phase, GLIMPSE2_ligate, compiled inside the docker)
 - `htslib` built with libcurl support (for authenticated HTTP/GCS streaming)
 - `bcftools` (for indexing/concat, as needed)
 - `curl` (metadata + remote access), `jq` (parse OAuth token), `time` (GNU time for timing)
