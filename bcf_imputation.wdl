@@ -94,7 +94,7 @@ task ImputeChunk {
 
     # Run imputation for the chunk
     /usr/bin/time -vo impute_chr~{chr}_~{idx}.time \
-    GLIMPSE2_phase --bam-list ~{bam_list} --reference ~{ref_panel} --output ${OUT} --log ~{output_prefix}_chr~{chr}_~{idx}.log --thread ~{threads} --map ~{map} --input-region ${IRG} --output-region ${ORG}
+    GLIMPSE2_phase --bam-list ~{bam_list} --reference ~{ref_panel} --output ${OUT} --log ~{output_prefix}_chr~{chr}_~{idx}.log --thread ~{imputation_threads} --map ~{map} --input-region ${IRG} --output-region ${ORG}
   >>>
 
   output {
@@ -108,7 +108,7 @@ task ImputeChunk {
     docker: "europe-docker.pkg.dev/finngen-sandbox-v3-containers/eu.gcr.io/glimpse"
     memory: imputation_ram + "G"
     cpu: imputation_threads
-    disks: "local-disk" + imputation_storage + "SSD"
+    disks: "local-disk " + imputation_storage + " SSD"
     zones: "europe-west1-b europe-west1-c europe-west1-d"
     preemptible: "3"
   }
@@ -135,7 +135,7 @@ task Ligate {
 
     # Ligate the chunks per chromosome
     /usr/bin/time -vo ligate_chr~{chr}.time \
-    GLIMPSE2_ligate --input imputed_chunks_list.txt --output ${OUT} --threads ~{threads} --log ~{output_prefix}_chr~{chr}.log
+    GLIMPSE2_ligate --input imputed_chunks_list.txt --output ${OUT} --threads ~{ligation_threads} --log ~{output_prefix}_chr~{chr}.log
   >>>
 
   output {
@@ -149,7 +149,7 @@ task Ligate {
     docker: "europe-docker.pkg.dev/finngen-sandbox-v3-containers/eu.gcr.io/glimpse"
     memory: ligation_ram + "G"
     cpu: ligation_threads
-    disks: "local-disk" + ligation_storage + "SSD"
+    disks: "local-disk " + ligation_storage + " SSD"
     zones: "europe-west1-b europe-west1-c europe-west1-d"
     preemptible: "3"
   }
