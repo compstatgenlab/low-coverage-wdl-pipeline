@@ -43,11 +43,11 @@ workflow WG_imputation {
   }
 
   output {
-    Array[File] imputed = bcf_imputation.imputed_bcf
-    Array[File] imputed_index = bcf_imputation.imputed_index
-    Array[Array[File]] impute_log = bcf_imputation.impute_log_output
-    Array[File] ligate_log = bcf_imputation.ligate_log_output
-    Array[Array[File]] impute_time = bcf_imputation.impute_time_output
-    Array[File] ligate_time = bcf_imputation.ligate_time_output
+    Array[File] imputed = impute.imputed_bcf
+    Array[File] imputed_index = impute.imputed_index
+    Array[Array[File]] impute_log = impute.impute_log_output
+    Array[File] ligate_log = impute.ligate_log_output
+    Array[Array[File]] impute_time = impute.impute_time_output
+    Array[File] ligate_time = impute.ligate_time_output
   }
 }
